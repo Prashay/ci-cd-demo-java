@@ -1,0 +1,14 @@
+image: java:8-jdk
+stages:
+   - test
+   - build
+
+testjob:
+  image: maven:3-jdk-8
+  stage: test
+  script: "mvn test -B"
+
+build-job:
+  image: maven:3-jdk-8
+  stage: build
+  script: "mvn package -U"  
